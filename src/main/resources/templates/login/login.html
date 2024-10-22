@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="body-login" th:style="'background-image: url(' + @{/img/login/background.jpg} + ')'">
+	<form action="#" method="get">
+		<div class="center-text-bold">
+			<p>Login ao sistema</p>
+		</div>
+		<div>
+			<label id="userLabel" class="label-margin-right bold-text">Usuário:</label>
+			<input id="userInput" name="username" type="text"  placeholder="Informe seu Usuário" required>
+		</div>
+		<div>
+			<label id="userLabel" class="label-margin-right bold-text">Senha:</label>
+			<input id="passInput" name="password" type="password"  placeholder="Informe sua Senha" required>
+		</div>
+		<div>
+			<input type="submit" value="Entrar">
+		</div>
+	</form>	
+</body>
+</html>
