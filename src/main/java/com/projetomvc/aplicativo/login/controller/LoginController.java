@@ -26,6 +26,7 @@ public class LoginController {
 	
     @GetMapping("login")
     public String login(Model model) {
+    	model.addAttribute("title", "Login Sistema");
     	model.addAttribute("user", new User());
         return "login/login"; 
     }
@@ -33,7 +34,7 @@ public class LoginController {
     @PostMapping("login")
     public String validateLogin(@ModelAttribute User userForm, RedirectAttributes redirectAttribute){
         if ("teste".equals(userForm.getUserName())){
-            return "produto/produto";
+            return "redirect:/produto";
         }else{
             redirectAttribute.addFlashAttribute("error","Usuário Inválido!");
             return "redirect:/login";
