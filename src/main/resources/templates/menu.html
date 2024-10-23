@@ -1,0 +1,18 @@
+<!-- src/main/resources/templates/menu.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">My Application</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div th:fragment="content">
+        <nav>
+            <ul>
+                <li><a th:href="@{/produto}">Produto</a></li>
+            </ul>
+        </nav>    
+    </div>
+</body>
+</html>
