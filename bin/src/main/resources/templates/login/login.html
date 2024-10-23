@@ -5,23 +5,20 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body class="body-login" th:style="'background-image: url(' + @{/img/login/background.jpg} + ')'">
-	<form th:action="@{/login}" th:object="${user}" method="post">
+	<form action="#" method="get">
 		<div class="center-text-bold">
 			<p>Login ao sistema</p>
 		</div>
 		<div>
 			<label id="userLabel" class="label-margin-right bold-text">Usuário:</label>
-			<input id="userInput" name="username" type="text" th:field="*{userName}"  placeholder="Informe seu Usuário" required>
+			<input id="userInput" name="username" type="text"  placeholder="Informe seu Usuário" required>
 		</div>
 		<div>
 			<label id="userLabel" class="label-margin-right bold-text">Senha:</label>
-			<input id="passInput" name="password" type="password" th:field="*{userPass}" placeholder="Informe sua Senha" required>
+			<input id="passInput" name="password" type="password"  placeholder="Informe sua Senha" required>
 		</div>
 		<div>
 			<input type="submit" value="Entrar">
-		</div>
-		<div th:if="${error}" style="color:red;">
-			<p th:text="${error}"></p>
 		</div>
 	</form>	
 </body>
