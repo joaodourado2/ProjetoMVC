@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.projetomvc.aplicativo.login.model.User;
+import com.projetomvc.aplicativo.login.service.ValidateLogin;
 
 @Controller
 @RequestMapping("/")
@@ -33,7 +34,7 @@ public class LoginController {
 
     @PostMapping("login")
     public String validateLogin(@ModelAttribute User userForm, RedirectAttributes redirectAttribute){
-        if ("teste".equals(userForm.getUserName())){
+        if (ValidateLogin.validateLogin(userForm.getUserName(), userForm.getUserPass())){
             return "redirect:/produto";
         }else{
             redirectAttribute.addFlashAttribute("error","Usuário Inválido!");

@@ -10,6 +10,7 @@ public class DataSourceProvider {
     private static HikariDataSource dataSource;
 
     static {
+
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(Config.getProperty("db.url"));
         config.setUsername(Config.getProperty("db.username"));
