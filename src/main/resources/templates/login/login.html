@@ -9,20 +9,20 @@
 		<div class="center-text-bold">
 			<p>Login ao sistema</p>
 		</div>
-		<div>
+		<div class="div-login">
 			<label id="userLabel" class="label-margin-right bold-text">Usuário:</label>
 			<input id="userInput" name="username" type="text" th:field="*{userName}"  placeholder="Informe seu Usuário" required>
 		</div>
-		<div>
+		<div  class="div-login">
 			<label id="userLabel" class="label-margin-right bold-text">Senha:</label>
 			<input id="passInput" name="password" type="password" th:field="*{userPass}" placeholder="Informe sua Senha" required>
 		</div>
-		<div>
+		<div  class="div-login">
 			<input type="submit" value="Entrar">
 		</div>
-		<div th:if="${error}" style="color:red;">
+		<div class="div-login" th:if="${error}" style="color:red;">
 			<p th:text="${error}"></p>
-		</div>
+		</div> 
 	</form>	
 </body>
 </html>

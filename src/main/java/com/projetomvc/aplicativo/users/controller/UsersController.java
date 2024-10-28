@@ -15,7 +15,7 @@ public class UsersController {
     public String users(Model model){
         UsersDao usersModal = new UsersDao();
         model.addAttribute("users", usersModal.getAllUsers());
-        return "usuarios/usuarios";
+        return "users/usuarios";
     };
 
 }

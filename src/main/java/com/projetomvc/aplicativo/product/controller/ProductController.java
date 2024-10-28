@@ -14,6 +14,6 @@ public class ProductController {
 	@GetMapping
 	public String product(Model model) {
         model.addAttribute("title", "Tela de Produto");
-	    return "produto/produto";
+	    return "product/produto";
 	}
 }

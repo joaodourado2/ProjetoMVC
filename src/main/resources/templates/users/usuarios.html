@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{menu :: menu-head}"></head>
+<body>
+    <div th:replace="~{menu :: menu-list}"></div>
+    <div id="main">
+        <div class="w3-container">
+            <h1>Lista de Usuários</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.cdUser}"></td>
+                        <td th:text="${user.nmUser}"></td>
+                        <td th:text="${user.snActive}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

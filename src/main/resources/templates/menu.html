@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="menu-head">
     <title th:text="${title}"></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
+ </head>
 <body>
-    <div th:fragment="menu-list">
-        <nav>
-            <ul>
-                <li><a th:href="@{/produto}">Produto</a></li>
-            </ul>
-            <ul>
-                <li><a th:href="@{/usuarios}">Cadatro de Usuários</a></li>
-            </ul>
-        </nav>    
+  <div th:fragment="menu-list">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;" id="mySidebar">
+      <a class="w3-bar-item w3-button" th:href="@{/produto}">Produto</a>
+      <a class="w3-bar-item w3-button" th:href="@{/usuarios}">Cadatro de Usuários</a>
     </div>
+    <div class="menu-top">
+      <button id="openNav" class="w3-button menu-top w3-xlarge">&#9776;</button>
+    </div>
+    <script th:src="@{/js/menu/script.js}"></script>
+  </div>
 </body>
 </html>

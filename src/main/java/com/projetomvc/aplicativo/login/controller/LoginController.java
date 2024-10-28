@@ -12,20 +12,10 @@ import com.projetomvc.aplicativo.login.model.User;
 import com.projetomvc.aplicativo.login.service.ValidateLogin;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/login")
 public class LoginController {
 
-	@GetMapping
-    public String redirectToLogin() {
-        return "redirect:login"; 
-    }
-	
-	@GetMapping("index")
-    public String redirectIndToLogin() {
-        return "redirect:login"; 
-    }
-	
-    @GetMapping("login")
+    @GetMapping
     public String login(Model model) {
     	model.addAttribute("title", "Login Sistema");
     	model.addAttribute("user", new User());
@@ -35,7 +25,7 @@ public class LoginController {
     @PostMapping("login")
     public String validateLogin(@ModelAttribute User userForm, RedirectAttributes redirectAttribute){
         if (ValidateLogin.validateLogin(userForm.getUserName(), userForm.getUserPass())){
-            return "redirect:/produto";
+            return "redirect:/inicio";
         }else{
             redirectAttribute.addFlashAttribute("error","Usuário Inválido!");
             return "redirect:/login";
