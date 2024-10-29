@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{menu :: menu-head}"></head>
+<body>
+    <div th:replace="~{menu :: menu-list}"></div>
+    <div id="main">
+        <div class="w3-container">
+            <form th:action="@{/usuarios/cadastrar-usuario}" th:object="${user}" method="POST">
+                <div>
+                    <label >ID do Usuário: </label>
+                    <input type="text" name="idUsser" id="newIdUser" th:field="*{idUser}" placeholder="Identificador Usuário" required>
+                </div>
+                <div>
+                    <label >Nome do Usuário: </label>
+                    <input type="text" name="nmUser" id="newnmUser" th:field="*{nmUser}" placeholder="Nome completo do Usuário" required>
+                </div>
+                <div>
+                    <label >Senha: </label>
+                    <input type="password" name="password" id="newPassword" th:field="*{dsPassword}" placeholder="Senha do usuário" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

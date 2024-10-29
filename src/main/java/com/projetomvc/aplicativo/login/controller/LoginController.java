@@ -22,7 +22,7 @@ public class LoginController {
         return "login/login"; 
     }
 
-    @PostMapping("login")
+    @PostMapping
     public String validateLogin(@ModelAttribute User userForm, RedirectAttributes redirectAttribute){
         if (ValidateLogin.validateLogin(userForm.getUserName(), userForm.getUserPass())){
             return "redirect:/inicio";

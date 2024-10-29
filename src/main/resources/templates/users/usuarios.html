@@ -11,17 +11,20 @@
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Email</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="user : ${users}">
-                        <td th:text="${user.cdUser}"></td>
+                        <td style="text-align: center; width: 20%;" th:text="${user.idUser}"></td>
                         <td th:text="${user.nmUser}"></td>
-                        <td th:text="${user.snActive}"></td>
+                        <td style="text-align: center; width: 10%;" th:text="${user.snActive == 'S' ? 'ATIVO' : 'INATIVO'}"></td>
                     </tr>
                 </tbody>
             </table>
+            <div style="margin-top: 2%; justify-content:flex-end; display: flex;">
+                <button th:onclick="|location.href='@{/usuarios/cadastrar-usuario}'|">Cadastrar Usuário</button>
+            </div>
         </div>
     </div>
 </body>

@@ -4,23 +4,39 @@
 
 body {
     margin: 0;
+    background-color: rgb(32, 30, 30);
+    color: aliceblue;
 }
 
 nav {
     justify-content: left;
 }
 
-form {
-    background-color: rgb(230, 222, 222);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
 input[type="submit"] {
     background-color: green;
     color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%; 
+}
+
+th {
+    width:fit-content;
+    border: grey  solid 2px;
+    background-color: rgb(57, 52, 52);
+}
+
+td {
+    width:fit-content;
+    border: grey solid 2px;
+    background-color: rgb(29, 27, 27);
+}
+
+button {
+    background-color: rgb(58, 58, 58);
+    color: aliceblue;
 }
 
 /*
@@ -62,5 +78,15 @@ input[type="submit"] {
 
 .menu-top {
     color: #fff!important;
-    background-color: #2b2437!important
+    background-color: #29262e!important
 }
+
+.form-login {
+    background-color: rgb(230, 222, 222);
+    padding: 20px;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+

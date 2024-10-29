@@ -5,7 +5,14 @@ public class User {
     private String nmUser;   
     private String snActive;
     private String dsPassword;
+    private String idUser;
 
+    public String getIdUser() {
+        return idUser;
+    }
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
+    }
     public int getCdUser() {
         return cdUser;
     }

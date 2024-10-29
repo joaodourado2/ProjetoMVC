@@ -5,7 +5,7 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body class="body-login" th:style="'background-image: url(' + @{/img/login/background.jpg} + ')'">
-	<form th:action="@{/login}" th:object="${user}" method="post">
+	<form class="form-login" th:action="@{/login}" th:object="${user}" method="POST">
 		<div class="center-text-bold">
 			<p>Login ao sistema</p>
 		</div>
