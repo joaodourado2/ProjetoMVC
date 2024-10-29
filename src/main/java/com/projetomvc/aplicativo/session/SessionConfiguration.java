@@ -16,4 +16,8 @@ public class SessionConfiguration {
 
     }
 
+    public static void closeSession(HttpSession sessionUser){
+        sessionUser.invalidate();
+    }
+
 }

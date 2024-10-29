@@ -25,7 +25,7 @@ public class HomeController {
             model.addAttribute("title", "Tela Inicial");
             return "home/inicio";
         }else{
-    	    return "redirect:login";
+    	    return "redirect:/login";
         }
     }
 
@@ -36,7 +36,7 @@ public class HomeController {
 	
     @GetMapping("/home")
     public String redirectHomeToInicio(){
-        return ("redirect:inicio");
+        return ("redirect:/inicio");
     }
 
 
