@@ -32,7 +32,7 @@ public class HomeController {
 	@GetMapping("/index")
     public String redirectToInicio() {
         return "redirect:inicio"; 
-    }
+    } 
 	
     @GetMapping("/home")
     public String redirectHomeToInicio(){
