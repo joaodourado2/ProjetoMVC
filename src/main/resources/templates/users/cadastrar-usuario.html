@@ -7,15 +7,15 @@
         <div class="w3-container">
             <form th:action="@{/usuarios/cadastrar-usuario}" th:object="${user}" method="POST">
                 <div>
-                    <label >ID do Usuário: </label>
-                    <input type="text" name="idUsser" id="newIdUser" th:field="*{idUser}" placeholder="Identificador Usuário" required>
+                    <label for="newIdUser">ID do Usuário: </label>
+                    <input type="text" name="idUser" id="newIdUser" th:field="*{idUser}" placeholder="Identificador Usuário" required>
                 </div>
                 <div>
-                    <label >Nome do Usuário: </label>
-                    <input type="text" name="nmUser" id="newnmUser" th:field="*{nmUser}" placeholder="Nome completo do Usuário" required>
+                    <label for="newNmUser">Nome do Usuário: </label>
+                    <input type="text" name="nmUser" id="newNmUser" th:field="*{nmUser}" placeholder="Nome completo do Usuário" required>
                 </div>
                 <div>
-                    <label >Senha: </label>
+                    <label for="newPassword">Senha: </label>
                     <input type="password" name="password" id="newPassword" th:field="*{dsPassword}" placeholder="Senha do usuário" required>
                 </div>
                 <button type="submit">Cadastrar</button>

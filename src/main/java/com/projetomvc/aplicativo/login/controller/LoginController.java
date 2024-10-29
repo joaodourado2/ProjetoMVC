@@ -8,23 +8,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.projetomvc.aplicativo.login.model.User;
+import com.projetomvc.aplicativo.login.model.UserLogin;
 import com.projetomvc.aplicativo.login.service.ValidateLogin;
+import com.projetomvc.aplicativo.session.SessionConfiguration;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
     @GetMapping
-    public String login(Model model) {
-    	model.addAttribute("title", "Login Sistema");
-    	model.addAttribute("user", new User());
-        return "login/login"; 
+    public String login(HttpSession session, Model model) {
+        if (SessionConfiguration.isConnected(session)){
+            return "redirect:inicio";
+        }else{
+    	    model.addAttribute("title", "Login Sistema");
+    	    model.addAttribute("user", new UserLogin());
+            return "login/login";
+        }
     }
 
     @PostMapping
-    public String validateLogin(@ModelAttribute User userForm, RedirectAttributes redirectAttribute){
-        if (ValidateLogin.validateLogin(userForm.getUserName(), userForm.getUserPass())){
+    public String validateLogin(@ModelAttribute UserLogin userForm, RedirectAttributes redirectAttribute, HttpSession session){
+        if (ValidateLogin.validateLogin(userForm.getIdUser(), userForm.getDsPassword())){
+            SessionConfiguration.setSession(session, userForm.getIdUser());
             return "redirect:/inicio";
         }else{
             redirectAttribute.addFlashAttribute("error","Usuário Inválido!");

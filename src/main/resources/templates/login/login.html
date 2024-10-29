@@ -10,12 +10,12 @@
 			<p>Login ao sistema</p>
 		</div>
 		<div class="div-login">
-			<label id="userLabel" class="label-margin-right bold-text">Usuário:</label>
-			<input id="userInput" name="username" type="text" th:field="*{userName}"  placeholder="Informe seu Usuário" required>
+			<label for="userInput" id="userLabel" class="label-margin-right bold-text">Usuário:</label>
+			<input id="userInput" name="username" type="text" th:field="*{idUser}"  placeholder="Informe seu Usuário" required>
 		</div>
 		<div  class="div-login">
-			<label id="userLabel" class="label-margin-right bold-text">Senha:</label>
-			<input id="passInput" name="password" type="password" th:field="*{userPass}" placeholder="Informe sua Senha" required>
+			<label for="passInput" id="userLabel" class="label-margin-right bold-text">Senha:</label>
+			<input id="passInput" name="password" type="password" th:field="*{dsPassword}" placeholder="Informe sua Senha" required>
 		</div>
 		<div  class="div-login">
 			<input type="submit" value="Entrar">
