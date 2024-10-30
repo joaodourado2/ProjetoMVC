@@ -5,10 +5,10 @@
     <div th:replace="~{menu :: menu-list}"></div>
     <div id="main">
         <div class="w3-container">
-            <form th:action="@{/usuarios/cadastrar-usuario}" th:object="${user}" method="POST">
+            <form th:action="@{/usuarios/cadastrar-usuario}" th:object="${user}" method="POST" class="form-cadastrar-usuario">
                 <div>
                     <label for="newIdUser">ID do Usuário: </label>
-                    <input type="text" name="idUser" id="newIdUser" th:field="*{idUser}" placeholder="Identificador Usuário" required>
+                    <input type="text" name="idUser" id="newIdUser" th:field="*{idUser}" placeholder="Identificador do Usuário" required>
                 </div>
                 <div>
                     <label for="newNmUser">Nome do Usuário: </label>
@@ -18,8 +18,11 @@
                     <label for="newPassword">Senha: </label>
                     <input type="password" name="password" id="newPassword" th:field="*{dsPassword}" placeholder="Senha do usuário" required>
                 </div>
-                <button type="submit">Cadastrar</button>
+                <button type="submit" class="btn-color w3-button">Cadastrar</button>
             </form>
+            <div th:if="${error}" style="color: red; text-align: center;">
+                <p th:text="${error}"></p>
+            </div>
         </div>
     </div>
 </body>

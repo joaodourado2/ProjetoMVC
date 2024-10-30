@@ -15,8 +15,8 @@ public class UserRegistration {
         try(Connection connection = DataSourceProvider.getDataSource().getConnection()){
             PreparedStatement stmt = connection.prepareStatement(sql);
 
-            stmt.setString(1,newUser.getIdUser());
-            stmt.setString(2,newUser.getNmUser());
+            stmt.setString(1,newUser.getIdUser().toUpperCase());
+            stmt.setString(2,newUser.getNmUser().toUpperCase());
             stmt.setString(3,newUser.getDsPassword());
             stmt.setString(4,"S");
 

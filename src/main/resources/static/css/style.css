@@ -96,3 +96,79 @@ button {
     justify-content: flex-end !important;
 }
 
+.form-cadastrar-usuario {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    gap: 15px; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; 
+    margin-left: auto;
+    margin-right: auto;
+    background-color: grey; 
+}
+
+
+.form-cadastrar-usuario label {
+    font-size: 16px; 
+    color: black;
+    font-weight: bold;
+    margin-bottom: 5px; 
+    text-align: left;
+}
+
+.form-cadastrar-usuario input {
+    font-weight: bold;
+    margin-bottom: 5px; 
+    text-align: left;
+    width:100%;
+}
+
+
+.btn-color {
+    background-color: rgb(58, 58, 58);
+    padding: 16px;
+}
+
+.div-produto {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-cadastrar-produto {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.form-cadastrar-produto label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-cadastrar-produto input,
+.form-cadastrar-produto select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+.form-cadastrar-produto button:hover {
+    background-color: #45a049; /* Efeito de hover no botão */
+}

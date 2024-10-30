@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.projetomvc.aplicativo.users.dao.UsersDao;
 import com.projetomvc.aplicativo.users.model.User;
@@ -43,12 +44,13 @@ public class UsersController {
     }
 
     @PostMapping("/cadastrar-usuario")
-    public String cadastrarUsuario(HttpSession session,@ModelAttribute User userForm){
+    public String cadastrarUsuario(HttpSession session,@ModelAttribute User userForm,RedirectAttributes redirectAttributes){
         if (SessionConfiguration.isConnected(session)){
             if (UserRegistration.userRegistration(userForm)){
                 return "redirect:/usuarios";
             }else{
-                return "redirect:/";
+                redirectAttributes.addFlashAttribute("error", "Ocorreu um erro ao cadastrar o Usuário!");
+                return "redirect:/usuarios/cadastrar-usuario";
             }
         }else{
             return "redirect:/login";
