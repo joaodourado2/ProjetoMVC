@@ -2,27 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${title}"></title>
-	<link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body class="body-login" th:style="'background-image: url(' + @{/img/login/background.jpg} + ')'">
-	<form class="form-login" th:action="@{/login}" th:object="${user}" method="POST">
-		<div class="center-text-bold">
-			<p>Login ao sistema</p>
-		</div>
-		<div class="div-login">
-			<label for="userInput" id="userLabel" class="label-margin-right bold-text">Usuário:</label>
-			<input id="userInput" name="username" type="text" th:field="*{idUser}"  placeholder="Informe seu Usuário" required>
-		</div>
-		<div  class="div-login">
-			<label for="passInput" id="userLabel" class="label-margin-right bold-text">Senha:</label>
-			<input id="passInput" name="password" type="password" th:field="*{dsPassword}" placeholder="Informe sua Senha" required>
-		</div>
-		<div  class="div-login">
-			<input type="submit" value="Entrar">
-		</div>
-		<div class="div-login" th:if="${error}" style="color:red;">
-			<p th:text="${error}"></p>
-		</div> 
-	</form>	
+<body class="body-login">
+    <div class="container">
+        <form class="form-login" th:action="@{/login}" th:object="${user}" method="POST">
+            <h2>Login ao sistema</h2>
+            <div class="div-login">
+                <label for="userInput" class="label-text">Usuário:</label>
+                <input id="userInput" name="username" type="text" th:field="*{idUser}" placeholder="Informe seu Usuário" required>
+            </div>
+            <div class="div-login">
+                <label for="passInput" class="label-text">Senha:</label>
+                <input id="passInput" name="password" type="password" th:field="*{dsPassword}" placeholder="Informe sua Senha" required>
+            </div>
+            <div class="div-login">
+                <input type="submit" value="Entrar" class="btn-submit">
+            </div>
+            <div class="div-login error-message" th:if="${error}">
+                <p th:text="${error}"></p>
+            </div>
+        </form>	
+    </div>
 </body>
 </html>

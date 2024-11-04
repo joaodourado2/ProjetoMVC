@@ -10,11 +10,9 @@ public class SessionConfiguration {
 
     public static boolean isConnected(HttpSession sessionUser) {
 
-        return true;
+        String loggedUser = (String) sessionUser.getAttribute("loggedUser");
 
-        //String loggedUser = (String) sessionUser.getAttribute("loggedUser");
-
-        //return loggedUser != null;
+        return loggedUser != null;
 
     }
 

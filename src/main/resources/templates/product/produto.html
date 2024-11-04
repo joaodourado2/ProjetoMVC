@@ -1,33 +1,70 @@
 <!DOCTYPE html>
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{menu :: menu-head}"></head>
 </head>
 <body>
     <div th:replace="~{menu :: menu-list}"></div>
-    <div class="div-produto" id="main">
+    <div id="main">
         <div class="w3-container">
-            <form class="form-cadastrar-produto" action="/produtos/criar" method="POST">
-                <h2>Criar Produto</h2>
-                
-                <label for="productName">Nome do Produto:</label>
-                <input type="text" id="productName" name="productName" placeholder="Nome do produto" required>
+            <h2>Criar Produto</h2>
+            <form action="/produtos/criar" method="post" class="w3-container">
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label for="nome">Nome do Produto:</label>
+                        <input class="w3-input" type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="w3-half">
+                        <label for="codigo">Código do Produto:</label>
+                        <input class="w3-input" type="text" id="codigo" name="codigo" required>
+                    </div>
+                </div>
 
-                <label for="productDescription">Descrição:</label>
-                <input type="text" id="productDescription" name="productDescription" placeholder="Descrição do produto" required>
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label for="categoria">Categoria:</label>
+                        <select class="w3-select" id="categoria" name="categoria" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="eletronicos">Eletrônicos</option>
+                            <option value="moveis">Móveis</option>
+                            <option value="roupas">Roupas</option>
+                            <option value="alimentos">Alimentos</option>
+                        </select>
+                    </div>
+                    <div class="w3-half">
+                        <label for="preco">Preço:</label>
+                        <input class="w3-input" type="number" id="preco" name="preco" required step="0.01">
+                    </div>
+                </div>
 
-                <label for="productPrice">Preço:</label>
-                <input type="number" id="productPrice" name="productPrice" placeholder="Preço do produto" required step="0.01">
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <label for="estoque">Quantidade em Estoque:</label>
+                        <input class="w3-input" type="number" id="estoque" name="estoque" required>
+                    </div>
+                    <div class="w3-half">
+                        <label for="fornecedor">Fornecedor:</label>
+                        <input class="w3-input" type="text" id="fornecedor" name="fornecedor" required>
+                    </div>
+                </div>
 
-                <label for="productCategory">Categoria:</label>
-                <select id="productCategory" name="productCategory" required>
-                    <option value="">Selecione uma categoria</option>
-                    <option value="eletrônicos">Eletrônicos</option>
-                    <option value="roupas">Roupas</option>
-                    <option value="alimentos">Alimentos</option>
-                    <option value="brinquedos">Brinquedos</option>
-                </select>
+                <div class="w3-row-padding">
+                    <div class="w3-full">
+                        <label for="descricao">Descrição:</label>
+                        <textarea class="w3-input" id="descricao" name="descricao" rows="4"></textarea>
+                    </div>
+                </div>
 
-                <button class="btn-color w3-button" type="submit">Criar Produto</button>
+                <div class="w3-row-padding">
+                    <div class="w3-full">
+                        <label for="imagem">Imagem do Produto:</label>
+                        <input class="w3-input" type="file" id="imagem" name="imagem" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="w3-row-padding">
+                    <button class="w3-button w3-blue">Salvar Produto</button>
+                    <button class="w3-button w3-red" type="reset">Limpar</button>
+                </div>
             </form>
         </div>
     </div>
