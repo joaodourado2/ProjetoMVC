@@ -64,10 +64,11 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px black;
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #999999;
     padding: 12px;
     text-align: center;
 }
@@ -75,6 +76,15 @@ th, td {
 th {
     background-color: #007BFF;
     color: white;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: white; 
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(208, 204, 204); 
 }
 
 tr:nth-child(even) {
@@ -171,7 +181,7 @@ tr:nth-child(even) {
     align-items: center;
     padding: 20px; 
     border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px black;
     width: 300px; 
     margin-left: auto;
     margin-right: auto; 
@@ -205,4 +215,18 @@ tr:nth-child(even) {
     color: white;
     padding: 16px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.full {
+    float: left;
+    width: 100%;
+    padding: 0 8px;
+    width: 100%
+}
+
+.scroll-page {
+    width: 100%;      
+    height: 100vh;    
+    overflow: auto;   
+    box-sizing: border-box;
 }
