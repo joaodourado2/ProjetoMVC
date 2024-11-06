@@ -19,5 +19,8 @@
     </div>
     <script th:src="@{/js/menu/script.js}"></script>
   </div>
+  <div th:object="${messageInfo}" th:if="${messageInfo}" th:class="${messageInfo.isError ? 'error-message-global' : 'success-message-global'}" th:fragment="message-info">
+    <p th:text="*{MessageReturn}"></p>
+  </div>
 </body>
 </html>

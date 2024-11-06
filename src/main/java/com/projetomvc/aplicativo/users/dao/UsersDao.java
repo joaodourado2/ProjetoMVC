@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.projetomvc.aplicativo.database.DataSourceProvider;
+import com.projetomvc.aplicativo.database.service.DataSourceProvider;
 import com.projetomvc.aplicativo.users.model.User;
 
 public class UsersDao implements UserDAO {

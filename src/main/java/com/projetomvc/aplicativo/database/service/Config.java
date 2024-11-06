@@ -1,4 +1,4 @@
-package com.projetomvc.aplicativo.database;
+package com.projetomvc.aplicativo.database.service;
 
 import java.io.IOException;
 import java.io.InputStream;

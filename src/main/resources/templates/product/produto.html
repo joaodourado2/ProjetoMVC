@@ -18,7 +18,6 @@
                         <input th:field="*{weight}" class="w3-input" type="number" id="weight" name="weight" required step="0.10">
                     </div>
                 </div>
-
                 <div class="w3-row-padding">
                     <div class="w3-half">
                         <label for="category">Categoria:</label>
@@ -35,21 +34,18 @@
                         <input th:field="*{price}" class="w3-input" type="number" id="price" name="price" required step="0.01">
                     </div>
                 </div>
-                
                 <div class="w3-row-padding">
                     <div class="w3-half">
                         <label for="ean">EAN:</label>
                         <input th:field="*{ean}" class="w3-input" type="number" id="ean" name="ean" required>
                     </div>
                 </div>
-
                 <div class="w3-row-padding">
                     <div class="full">
                         <label for="description">Descrição:</label>
                         <textarea th:field="*{description}" class="w3-input" id="description" name="description" rows="2" style="resize: none;"></textarea>
                     </div>
                 </div>
-
                 <div class="w3-row-padding" style="margin-top: 5px;">
                     <div class="full">
                         <button type="submit" class="w3-button w3-blue">Salvar Produto</button>
@@ -59,5 +55,6 @@
             </form>
         </div>
     </div>
+    <div th:replace="~{menu :: message-info}"></div>
 </body>
 </html>

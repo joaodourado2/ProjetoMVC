@@ -2,7 +2,7 @@ package com.projetomvc.aplicativo.login.service;
 
 import java.sql.*;
 
-import com.projetomvc.aplicativo.database.DataSourceProvider;
+import com.projetomvc.aplicativo.database.service.DataSourceProvider;
 import com.projetomvc.aplicativo.users.model.User;
 
 public class ValidateLogin {

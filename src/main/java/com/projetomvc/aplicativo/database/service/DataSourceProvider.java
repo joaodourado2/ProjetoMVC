@@ -1,4 +1,4 @@
-package com.projetomvc.aplicativo.database;
+package com.projetomvc.aplicativo.database.service;
 
 
 import com.zaxxer.hikari.HikariConfig;

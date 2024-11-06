@@ -18,3 +18,18 @@ document.getElementById("openNav").addEventListener("click", function() {
         close_menu();
     }
 });
+
+window.onload = function() {
+    
+    var messageBox = document.querySelector('.success-message-global');
+    
+    if (!messageBox){
+        messageBox = document.querySelector('.error-message-global');
+    }
+
+    if (messageBox) {
+        setTimeout(function() {
+            messageBox.classList.add('hide');
+        }, 3000); 
+    }
+};

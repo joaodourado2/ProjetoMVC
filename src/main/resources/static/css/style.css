@@ -48,13 +48,6 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.error-message {
-    color: red;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-
 h1 {
     color: #333;
     margin-bottom: 20px;
@@ -229,4 +222,49 @@ tr:nth-child(even) {
     height: 100vh;    
     overflow: auto;   
     box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.success-message {
+    color: green;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.error-message-global {
+    position: fixed; 
+    bottom: 20px;    
+    right: 20px;     
+    background-color: rgba(0, 128, 0, 0.586);
+    color: white;   
+    padding: 15px;   
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;  
+    z-index: 1000;    
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.success-message-global {
+    position: fixed; 
+    bottom: 20px;    
+    right: 20px;     
+    background-color: rgba(0, 128, 0, 0.586);
+    color: white;   
+    padding: 15px;   
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;  
+    z-index: 1000;    
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.hide {
+    opacity: 0;
+    transform: translateY(20px);
 }

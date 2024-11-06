@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.projetomvc.aplicativo.global.model.ServiceMessageReturn;
 import com.projetomvc.aplicativo.product.model.Product;
 import com.projetomvc.aplicativo.product.service.CreateProductService;
 import com.projetomvc.aplicativo.session.SessionConfiguration;
@@ -31,13 +33,16 @@ public class ProductController {
 	}
 
 	@PostMapping
-	public String createProduct(HttpSession session,Model model,@ModelAttribute Product newProduct) {
+	public String createProduct(HttpSession session,Model model,@ModelAttribute Product newProduct,RedirectAttributes redirectAttribute) {
 		if (SessionConfiguration.isConnected(session)){
-			if (CreateProductService.createProductService(newProduct)){
+			ServiceMessageReturn serviceMessageReturn = CreateProductService.createProductService(newProduct);
+			if (!serviceMessageReturn.isError()){
+				redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
         		return "redirect:produto";
 			}
 			else{
-				return "redirect:inicio";
+				redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
+				return "redirect:produto";
 			}
 		}else{
 			return "redirect:login";
