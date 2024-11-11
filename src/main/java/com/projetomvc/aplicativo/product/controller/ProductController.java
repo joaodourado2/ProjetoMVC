@@ -22,12 +22,14 @@ public class ProductController {
 
 	
 	@GetMapping
-	public String product(HttpSession session,Model model) {
+	public String product(HttpSession session,Model model,RedirectAttributes redirectAttribute) {
 		if (SessionConfiguration.isConnected(session)){
         	model.addAttribute("title", "Tela de Produto");
 	    	model.addAttribute("product",new Product());
 			return "product/produto";
 		}else{
+			ServiceMessageReturn serviceMessageReturn = new ServiceMessageReturn(true, "Usúario não logado!");
+            redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
 			return "redirect:login";
 		}
 	}
@@ -36,15 +38,11 @@ public class ProductController {
 	public String createProduct(HttpSession session,Model model,@ModelAttribute Product newProduct,RedirectAttributes redirectAttribute) {
 		if (SessionConfiguration.isConnected(session)){
 			ServiceMessageReturn serviceMessageReturn = CreateProductService.createProductService(newProduct);
-			if (!serviceMessageReturn.isError()){
-				redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
-        		return "redirect:produto";
-			}
-			else{
-				redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
-				return "redirect:produto";
-			}
+			redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
+        	return "redirect:produto";
 		}else{
+			ServiceMessageReturn serviceMessageReturn = new ServiceMessageReturn(true, "Usúario não logado!");
+            redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
 			return "redirect:login";
 		}
 	}

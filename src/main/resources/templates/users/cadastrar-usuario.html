@@ -20,10 +20,8 @@
                 </div>
                 <button type="submit" class="btn-color w3-button">Cadastrar</button>
             </form>
-            <div th:if="${error}" style="color: red; text-align: center;">
-                <p th:text="${error}"></p>
-            </div>
         </div>
     </div>
+    <div th:replace="~{menu :: message-info}"></div>
 </body>
 </html>

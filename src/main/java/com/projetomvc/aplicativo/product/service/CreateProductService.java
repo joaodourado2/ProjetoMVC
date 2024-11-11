@@ -9,8 +9,6 @@ import com.projetomvc.aplicativo.product.model.Product;
 public class CreateProductService {
 
     public static ServiceMessageReturn createProductService(Product newProductServ){
-        
-        ServiceMessageReturn serviceMessageReturn = new ServiceMessageReturn();
 
         String sql = "INSERT INTO USER_JAVA.PRODUCT(NM_PRODUCT,NR_PRICE,NR_WEIGHT,DS_DESCRIPTION,TP_CATEGORY,CD_EAN) " +
         "VALUES(?,?,?,?,?,?)";
@@ -29,19 +27,14 @@ public class CreateProductService {
             int countRow = preparedStatement.executeUpdate();
             
             if (countRow > 0) {
-                serviceMessageReturn.setError(false);
-                serviceMessageReturn.setMessageReturn("Produro inserido com Sucesso!");
-                return serviceMessageReturn;
+                return new ServiceMessageReturn(false,"Produto Cadastrado com Sucesso!");
             }else{
-                serviceMessageReturn.setError(true);
-                serviceMessageReturn.setMessageReturn("Nenhum Registro Cadastrado!");
-                return serviceMessageReturn;
+                return new ServiceMessageReturn(true,"Produto não Cadastrado!");
             }
 
         }catch (SQLException e){
-            serviceMessageReturn.setError(true);
-            serviceMessageReturn.setMessageReturn("Ocorreu um erro com o Banco de Dados!");
-            return serviceMessageReturn;
+            e.printStackTrace();
+           return new ServiceMessageReturn(true,"Ocorreu um erro com o Banco de Dados!");
         }
     }
 

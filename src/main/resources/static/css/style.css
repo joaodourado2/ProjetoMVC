@@ -240,7 +240,7 @@ tr:nth-child(even) {
     position: fixed; 
     bottom: 20px;    
     right: 20px;     
-    background-color: rgba(0, 128, 0, 0.586);
+    background-color: rgba(255, 0, 0, 0.600);
     color: white;   
     padding: 15px;   
     border-radius: 5px; 
@@ -254,7 +254,7 @@ tr:nth-child(even) {
     position: fixed; 
     bottom: 20px;    
     right: 20px;     
-    background-color: rgba(0, 128, 0, 0.586);
+    background-color: rgba(0, 128, 0, 0.600);
     color: white;   
     padding: 15px;   
     border-radius: 5px; 

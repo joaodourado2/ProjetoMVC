@@ -19,10 +19,22 @@
             <div class="div-login">
                 <input type="submit" value="Entrar" class="btn-submit">
             </div>
-            <div class="div-login error-message" th:if="${error}">
-                <p th:text="${error}"></p>
-            </div>
         </form>	
+        <div th:replace="~{menu :: message-info}"></div>
+        <script>window.onload = function() {
+    
+            var messageBox = document.querySelector('.success-message-global');
+            
+            if (!messageBox){
+                messageBox = document.querySelector('.error-message-global');
+            }
+        
+            if (messageBox) {
+                setTimeout(function() {
+                    messageBox.classList.add('hide');
+                }, 3000); 
+            }
+        };</script>
     </div>
 </body>
 </html>

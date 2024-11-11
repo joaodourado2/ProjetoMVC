@@ -3,14 +3,19 @@ package com.projetomvc.aplicativo.global.model;
 public class ServiceMessageReturn {
 
     private boolean isError;
-    private String  MessageReturn;
+    private String  messageReturn;
 
-    public String getMessageReturn() {
-        return MessageReturn;
+    public ServiceMessageReturn(boolean isErrorCons, String messageReturnCons){
+        this.setError(isErrorCons);
+        this.setMessageReturn(messageReturnCons);
     }
 
-    public void setMessageReturn(String messageReturn) {
-        MessageReturn = messageReturn;
+    public String getMessageReturn() {
+        return messageReturn;
+    }
+
+    public void setMessageReturn(String parMessageReturn) {
+        messageReturn = parMessageReturn;
     }
 
     public boolean isError() {

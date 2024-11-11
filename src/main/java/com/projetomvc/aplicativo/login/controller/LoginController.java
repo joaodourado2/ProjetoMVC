@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.projetomvc.aplicativo.global.model.ServiceMessageReturn;
 import com.projetomvc.aplicativo.login.model.UserLogin;
 import com.projetomvc.aplicativo.login.service.ValidateLogin;
 import com.projetomvc.aplicativo.session.SessionConfiguration;
@@ -35,7 +36,8 @@ public class LoginController {
             SessionConfiguration.setSession(session, userForm.getIdUser());
             return "redirect:/inicio";
         }else{
-            redirectAttribute.addFlashAttribute("error","Usuário Inválido!");
+            ServiceMessageReturn serviceMessageReturn = new ServiceMessageReturn(true, "Usúario ou senha inválido!");
+            redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
             return "redirect:/login";
         }
     }

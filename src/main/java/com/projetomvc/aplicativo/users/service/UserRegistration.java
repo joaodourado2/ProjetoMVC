@@ -3,11 +3,12 @@ package com.projetomvc.aplicativo.users.service;
 import java.sql.*;
 
 import com.projetomvc.aplicativo.database.service.DataSourceProvider;
+import com.projetomvc.aplicativo.global.model.ServiceMessageReturn;
 import com.projetomvc.aplicativo.users.model.User;
 
 public class UserRegistration {
 
-    public static boolean userRegistration(User newUser){
+    public static ServiceMessageReturn userRegistration(User newUser){
 
         String sql = "INSERT INTO USER_JAVA.USERS(ID_USER,NM_USER,DS_PASSWORD,SN_ACTIVE)"+
                      "VALUES(?,?,?,?)";
@@ -23,13 +24,13 @@ public class UserRegistration {
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                return true;
+                return new ServiceMessageReturn(false,"Usuário Cadastrado com Sucesso!");
             }else{
-                return false;
+                return new ServiceMessageReturn(true,"Usuário não cadastrado!");
             } 
         }catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            return new ServiceMessageReturn(true,"Ocorreu um erro com o Banco de Dados!");
         }
 
     }
