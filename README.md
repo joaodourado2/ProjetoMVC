@@ -29,7 +29,7 @@ Este projeto é uma aplicação web para gerenciar solicitações de compra. Ele
 1. Clone o repositório:
     ```sh
     git clone https://github.com/joaodourado2/ProjetoMVC.git
-    cd seu-repositorio
+    cd ProjetoMVC
     ```
 
 2. Configure o banco de dados no arquivo `application.properties`:
