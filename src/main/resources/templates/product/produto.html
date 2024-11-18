@@ -6,53 +6,55 @@
     <div th:replace="~{menu :: menu-list}"></div>
     <div id="main">
         <div class="w3-container">
-            <h2>Criar Produto</h2>
-            <form th:action="@{/produto}" th:object="${product}" class="w3-container" method="post">
-                <div class="w3-row-padding">
-                    <div class="w3-half">
-                        <label for="nameProduct">Nome do Produto:</label>
-                        <input th:field="*{nameProduct}" class="w3-input" type="text" id="nameProduct" name="nameProduct" required>
+            <div class="form-container">
+                <h2>Criar Produto</h2>
+                <form th:action="@{/produto}" th:object="${product}" class="w3-container" method="post">
+                    <div class="w3-row-padding">
+                        <div class="w3-half">
+                            <label for="nameProduct">Nome do Produto:</label>
+                            <input th:field="*{nameProduct}" class="w3-input" type="text" id="nameProduct" name="nameProduct" required>
+                        </div>
+                        <div class="w3-half">
+                            <label for="weight">Peso (Kg):</label>
+                            <input th:field="*{weight}" class="w3-input" type="number" id="weight" name="weight" required step="0.10">
+                        </div>
                     </div>
-                    <div class="w3-half">
-                        <label for="weight">Peso (Kg):</label>
-                        <input th:field="*{weight}" class="w3-input" type="number" id="weight" name="weight" required step="0.10">
+                    <div class="w3-row-padding">
+                        <div class="w3-half">
+                            <label for="category">Categoria:</label>
+                            <select th:field="*{category}" class="w3-select" id="category" name="category" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="E">Eletrônicos</option>
+                                <option value="M">Móveis</option>
+                                <option value="R">Roupas</option>
+                                <option value="A">Alimentos</option>
+                            </select>
+                        </div>
+                        <div class="w3-half">
+                            <label for="price">Preço:</label>
+                            <input th:field="*{price}" class="w3-input" type="number" id="price" name="price" required step="0.01">
+                        </div>
                     </div>
-                </div>
-                <div class="w3-row-padding">
-                    <div class="w3-half">
-                        <label for="category">Categoria:</label>
-                        <select th:field="*{category}" class="w3-select" id="category" name="category" required>
-                            <option value="">Selecione uma categoria</option>
-                            <option value="E">Eletrônicos</option>
-                            <option value="M">Móveis</option>
-                            <option value="R">Roupas</option>
-                            <option value="A">Alimentos</option>
-                        </select>
+                    <div class="w3-row-padding">
+                        <div class="w3-half">
+                            <label for="ean">EAN:</label>
+                            <input th:field="*{ean}" class="w3-input" type="number" id="ean" name="ean" required>
+                        </div>
                     </div>
-                    <div class="w3-half">
-                        <label for="price">Preço:</label>
-                        <input th:field="*{price}" class="w3-input" type="number" id="price" name="price" required step="0.01">
+                    <div class="w3-row-padding">
+                        <div class="full">
+                            <label for="description">Descrição:</label>
+                            <textarea th:field="*{description}" class="w3-input" id="description" name="description" rows="2" style="resize: none;"></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="w3-row-padding">
-                    <div class="w3-half">
-                        <label for="ean">EAN:</label>
-                        <input th:field="*{ean}" class="w3-input" type="number" id="ean" name="ean" required>
+                    <div class="w3-row-padding" style="margin-top: 5px;">
+                        <div class="full">
+                            <button type="submit" class="w3-button w3-blue">Salvar Produto</button>
+                            <button class="w3-button w3-red" type="reset">Limpar</button>
+                        </div>
                     </div>
-                </div>
-                <div class="w3-row-padding">
-                    <div class="full">
-                        <label for="description">Descrição:</label>
-                        <textarea th:field="*{description}" class="w3-input" id="description" name="description" rows="2" style="resize: none;"></textarea>
-                    </div>
-                </div>
-                <div class="w3-row-padding" style="margin-top: 5px;">
-                    <div class="full">
-                        <button type="submit" class="w3-button w3-blue">Salvar Produto</button>
-                        <button class="w3-button w3-red" type="reset">Limpar</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
     <div th:replace="~{menu :: message-info}"></div>

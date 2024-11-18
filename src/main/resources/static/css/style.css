@@ -268,3 +268,27 @@ tr:nth-child(even) {
     opacity: 0;
     transform: translateY(20px);
 }
+
+.w3-dropdown-hover:hover .w3-dropdown-content {
+    display: block;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+}
+.form-container label {
+    font-weight: bold;
+}
+.form-container .w3-input, .form-container .w3-select {
+    margin-bottom: 15px;
+}
+.form-container .w3-button {
+    margin-top: 10px;
+}

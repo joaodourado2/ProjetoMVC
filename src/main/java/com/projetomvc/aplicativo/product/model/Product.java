@@ -2,6 +2,7 @@ package com.projetomvc.aplicativo.product.model;
 
 public class Product {
 
+    private int idProduct;
     private String nameProduct;
     private double price;
     private double weight;
@@ -9,7 +10,15 @@ public class Product {
     private String category;
     private int ean;
     
-    
+        
+    public int getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(int idProduct) {
+        this.idProduct = idProduct;
+    }
+
     public String getCategory() {
         return category;
     }
