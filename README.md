@@ -8,6 +8,7 @@ Este projeto é uma aplicação web para gerenciar solicitações de compra. Ele
 - Spring Boot
 - Thymeleaf
 - Oracle Database
+- JavaScript
 
 ## Estrutura do Projeto
 
