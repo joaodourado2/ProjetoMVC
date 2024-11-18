@@ -27,7 +27,7 @@ Este projeto é uma aplicação web para gerenciar solicitações de compra. Ele
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/joaodourado2/ProjetoMVC.git
     cd seu-repositorio
     ```
 
