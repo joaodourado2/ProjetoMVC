@@ -19,7 +19,7 @@ public class LogoutContoller {
         SessionConfiguration.closeSession(session);
         ServiceMessageReturn serviceMessageReturn = new ServiceMessageReturn(false, "Usúario deslogado!");
         redirectAttribute.addFlashAttribute("messageInfo",serviceMessageReturn);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
 
