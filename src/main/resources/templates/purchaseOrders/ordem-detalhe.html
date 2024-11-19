@@ -15,7 +15,9 @@
                     <li th:each="itOrder : ${order.purchaseItemOrder}" class="w3-padding-16 w3-border-bottom">
                         <span class="w3-large" th:text="${itOrder.product.idProduct}"></span>
                         <span th:text="${itOrder.product.nameProduct}"></span><br>
-                        <span>Quantidade: <span th:text="${itOrder.quantityRequested}"></span></span>
+                        <span>Quantidade: <span th:text="${itOrder.quantityRequested}"></span></span><br>
+                        <span>Preço Unit.: <span th:text="${itOrder.product.price}"></span></span><br>
+                        <span>Preço Total: <span th:text="${itOrder.quantityRequested * itOrder.product.price}"></span></span>
                     </li>
                 </ul>
                 <a href="/ordem-compra" class="w3-button w3-blue w3-margin-top">Voltar</a>
