@@ -3,6 +3,7 @@ package com.projetomvc.aplicativo.purchaseRequest.model;
 public class SelectedProduct {
     private int productId;
     private int quantity;
+    
 
     public int getProductId() {
         return productId;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{menu :: menu-head}"></head>
+<body>
+    <div th:replace="~{menu :: menu-list}"></div>
+    <div id="main">
+        <div class="w3-container scroll-page">
+            <div class="details-container w3-card-4 w3-light-grey">
+                <h2 class="w3-text-blue">Detalhes da Ordem de Compra</h2>
+                <p><b>ID:</b> <span th:text="${order.id}"></span></p>
+                <p><b>Descrição:</b> <span th:text="${order.purchaseRequest.description}"></span></p>
+                <p><b>Data Desejada:</b> <span th:text="${order.purchaseRequest.requestDate}"></span></p>
+                <h3 class="w3-text-blue">Produtos Selecionados</h3>
+                <ul class="w3-ul w3-border">
+                    <li th:each="itOrder : ${order.purchaseItemOrder}" class="w3-padding-16 w3-border-bottom">
+                        <span class="w3-large" th:text="${itOrder.product.idProduct}"></span>
+                        <span th:text="${itOrder.product.nameProduct}"></span><br>
+                        <span>Quantidade: <span th:text="${itOrder.quantityRequested}"></span></span>
+                    </li>
+                </ul>
+                <a href="/ordem-compra" class="w3-button w3-blue w3-margin-top">Voltar</a>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{menu :: message-info}"></div>
+</body>
+</html>
