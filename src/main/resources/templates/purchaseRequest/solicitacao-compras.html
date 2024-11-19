@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{menu :: menu-head}"></head>
-    <script th:src="@{/js/product/script.js}"></script>
+    <script th:src="@{/js/purchaseRequest/script.js}"></script>
 </head>
 <body>
     <div th:replace="~{menu :: menu-list}"></div>
     <div id="main">
-        <div class="w3-container">
+        <div class="w3-container scroll-page">
             <div class="form-container">
-                <h2>Criar Solicitação de Compras</h2>
+                <h2 class="w3-text-blue"><b>Criar Solicitação de Compras</b></h2>
                 <form th:action="@{/solicitacao-compras}" th:object="${purchaseRequest}" class="w3-container" method="post" onsubmit="prepareSelectedProducts()">
                     <div class="w3-row-padding">
                         <div class="w3-half">
-                            <label for="description">Justificativa da Compra:</label>
+                            <label for="description" class="w3-text-blue">Justificativa da Compra:</label>
                             <textarea th:field="*{description}" class="w3-input" id="description" name="description" rows="1" style="resize: none;"></textarea>
                         </div>
                         <div class="w3-half">
-                            <label for="requestDate">Necessário para o dia:</label>
+                            <label for="requestDate" class="w3-text-blue">Necessário para o dia:</label>
                             <input th:field="*{requestDate}" class="w3-input" type="date" id="requestDate" name="requestDate" required>
                         </div>
                     </div>
-                    <div class="w3-row-padding">
+                    <div class="w3-row-padding w3-margin-top">
                         <div class="full">
-                            <label for="products">Produtos:</label>
-                            <select th:field="*{products}" class="w3-select" style="background-color: rgba(243, 241, 241, 0.836);" id="products" name="products" multiple required ondblclick="addProduct()">
-                                <option th:each="product : ${products}" th:value="${product.idProduct}" th:text="${product.nameProduct}"></option>
+                            <label for="products" class="w3-text-blue">Selecione os Produtos:</label>
+                            <select th:field="*{products}" class="w3-select w3-border w3-light-grey w3-hover-shadow w3-padding" id="products" name="products" multiple required ondblclick="addProduct()">
+                                <option th:each="product : ${products}" th:value="${product.idProduct}" th:text="${product.nameProduct}" class="w3-padding"></option>
                             </select>
                         </div>
                     </div>
-                    <div class="w3-row-padding">
-                        <div class="full">
-                            <label for="selectedProductsList">Produtos Selecionados:</label>
-                            <ul id="selectedProductsList" class="w3-ul"  ondblclick="removeProduct(event)"></ul>
+                    <div class="w3-row-padding w3-margin-top">
+                        <div class="w3-col s12">
+                            <label for="selectedProductsList" class="w3-text-blue">Produtos Selecionados:</label>
+                            <ul id="selectedProductsList" class="w3-ul w3-card-4 w3-hoverable w3-light-grey" ondblclick="removeProduct(event)">
+                            </ul>
                         </div>
                     </div>
                     <div class="w3-row-padding" style="margin-top: 5px;">

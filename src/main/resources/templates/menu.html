@@ -10,10 +10,12 @@
 <body>
   <div th:fragment="menu-list">
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; background-color: #114174ba; color: white;" id="mySidebar">
+      <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/inicio}">Tela Inicial</a>
       <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/usuarios/cadastrar-usuario}">Cadastro de Usúario</a>
       <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/usuarios}">Lista de Usúario</a>
-      <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/produto}">Produto</a>
+      <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/produto}">Cadastro de Produto</a>
       <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/solicitacao-compras}">Solicitação de Compras</a>
+      <a class="w3-bar-item w3-button btn-color-sidebar" th:href="@{/ordem-compra}">Ordens de Compras</a>
     </div>
     <div class="menu-top">
       <button id="openNav" class="w3-button w3-xlarge">&#9776;</button>

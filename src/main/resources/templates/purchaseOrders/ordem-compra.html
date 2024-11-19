@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{menu :: menu-head}"></head>
+    <script th:src="@{/js/purchaseOrders/script.js}"></script>
+<body>
+    <div th:replace="~{menu :: menu-list}"></div>
+    <div id="main">
+        <div class="w3-container scroll-page">
+            <h2 class="w3-text-blue" ><b>Ordens de Compras</b></h2>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Justificativa</th>
+                            <th>Data Desejada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order : ${orders}" th:ondblclick="redirectToDetails([[${order.idPurchaseRequest}]])">
+                            <td style="text-align: center; width: 20%;" th:text="${order.idPurchaseRequest}"></td>
+                            <td style="text-align: left; padding-left: 10px;" th:text="${order.description}"></td>
+                            <td style="text-align: center; width: 10%;" th:text="${order.requestDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

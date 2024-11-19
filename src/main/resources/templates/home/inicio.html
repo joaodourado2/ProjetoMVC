@@ -5,6 +5,26 @@
     <div th:replace="~{menu :: menu-list}"></div>
     <div id="main">
         <div class="w3-container">
+            <div class="welcome-container">
+                <h1 class="w3-text-blue"><b>Bem-vindo ao Sistema de Solicitação de Compras</b></h1>
+                <p class="w3-large">Gerencie suas solicitações de compra de forma fácil e eficiente.</p>
+            </div>
+            <div class="w3-row-padding w3-margin-top w3-center">
+                <div class="w3-half">
+                    <div class="w3-card-4 w3-light-blue card">
+                        <h3><b>Criar Solicitação</b></h3>
+                        <p>Inicie uma nova solicitação de compra para os produtos necessários.</p>
+                        <a href="/solicitacao-compras" class="w3-button w3-blue">Criar</a>
+                    </div>
+                </div>
+                <div class="w3-half">
+                    <div class="w3-card-4 w3-light-blue card">
+                        <h3><b>Ver Solicitações</b></h3>
+                        <p>Veja todas as solicitações de compra existentes e seus detalhes.</p>
+                        <a href="/ordem-compra" class="w3-button w3-blue">Ver</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
