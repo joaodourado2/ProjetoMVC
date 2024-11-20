@@ -15,7 +15,6 @@ Este projeto é uma aplicação web para gerenciar solicitações de compra. Ele
 - **Controller**: Controladores que lidam com as requisições HTTP.
 - **Service**: Serviços que contêm a lógica de negócios.
 - **Model**: Modelos que representam as entidades do banco de dados.
-- **Repository**: Repositórios que interagem com o banco de dados.
 
 ## Funcionalidades
 
